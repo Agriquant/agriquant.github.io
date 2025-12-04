@@ -7,71 +7,176 @@
   <style>
     body {
       background: #fff;
-      font-family: 'Inter', Arial, sans-serif;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       margin: 0;
-      color: #181818;
+      color: #111;
+      -webkit-font-smoothing: antialiased;
     }
     .container {
       max-width: 700px;
-      margin: 40px auto;
-      padding: 32px 16px 0 16px;
+      margin: 60px auto;
+      padding: 0 20px;
     }
     h1 {
-      font-size: 2.5rem;
+      font-size: 2.2rem;
       font-weight: 800;
-      margin-bottom: 0.3em;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.2em;
+      color: #000;
     }
     .date {
       color: #666;
-      font-size: 1rem;
-      margin-bottom: 2em;
-      font-family: inherit;
+      font-size: 0.95rem;
+      margin-bottom: 3em;
+      font-feature-settings: "tnum";
     }
     p {
-      line-height: 1.7;
-      font-size: 1.14rem;
-      margin-bottom: 1.1em;
+      line-height: 1.6;
+      font-size: 1.1rem;
+      margin-bottom: 1.5em;
+      color: #333;
     }
+    
+    /* --- VIZ CARD STYLING --- */
+    .viz-card {
+      margin: 40px 0;
+      border: 1px solid #eaeaea;
+      border-radius: 12px;
+      padding: 24px;
+      background-color: #ffffff;
+      box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.08);
+    }
+    .viz-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 16px;
+      font-family: 'Inter', sans-serif;
+    }
+    .viz-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #111;
+    }
+    .viz-badge {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #d7191c;
+      font-weight: 700;
+      background: #fff0f0;
+      padding: 4px 8px;
+      border-radius: 4px;
+    }
+    .viz-labels {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 12px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: #666;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+    .iframe-container {
+      position: relative;
+      width: 100%;
+      padding-bottom: 65%; /* Aspect Ratio */
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid #eee;
+      background: #f9f9f9;
+    }
+    .iframe-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+    .viz-caption {
+      margin-top: 16px;
+      font-size: 0.9rem;
+      line-height: 1.5;
+      color: #555;
+      background: #f9fafb;
+      padding: 12px;
+      border-radius: 6px;
+      border-left: 3px solid #111;
+    }
+    /* ----------------------- */
+
     .footer {
-      border-top: 1px solid #e4e4e4;
-      margin-top: 2.8em;
-      padding-top: 1.3em;
-      font-size: 1rem;
-      color: #444;
+      border-top: 1px solid #eaeaea;
+      margin-top: 4em;
+      padding-top: 2em;
+      padding-bottom: 4em;
+      font-size: 0.95rem;
+      color: #666;
     }
     .footer a {
-      color: #2676d3;
-      text-decoration: underline;
-      margin-left: 0.4em;
-      margin-right: 0.6em;
+      color: #111;
+      text-decoration: none;
+      font-weight: 600;
+      margin-left: 5px;
+      border-bottom: 1px solid #ccc;
+      transition: border-color 0.2s;
     }
-    .footer .icon {
-      color: #863333;
-      margin-right: 0.45em;
-      font-size: 1.1em;
-      vertical-align: -2px;
+    .footer a:hover {
+      border-bottom-color: #000;
     }
   </style>
 </head>
 <body>
+
   <div class="container">
     <h1>Introducing Agriquant</h1>
     <div class="date">September 18, 2025</div>
+
     <p>
       Agriquant is a research-driven startup developing the first algorithmic risk and decision platform for agriculture in Uruguay and LATAM.
     </p>
+
     <p>
-      Uruguay's agri-food sector generates billions in export value each year (beef, dairy, rice alone exceeded US$3.5B in 2023). Yet production and margins are highly exposed to weather, input-cost, and FX shocks. The 2022–23 drought brought rainfall ~47% below normal and caused ~US$1.8B in direct losses. Input prices and currencies also move sharply, affecting sowing, feeding, logistics and hedging decisions.
+      Uruguay's agri-food sector generates billions in export value each year (beef, dairy, rice alone exceeded US$3.5B in 2023). Yet production margins remain exposed to unhedged volatility. The 2022–23 drought brought rainfall ~47% below normal, causing ~US$1.8B in direct losses. 
     </p>
+
+    <!-- VISUALIZATION INSERT -->
+    <div class="viz-card">
+      <div class="viz-header">
+        <div class="viz-title">Case Study: The Invisible Crash</div>
+        <div class="viz-badge">Nov 2022 Analysis</div>
+      </div>
+      
+      <div class="viz-labels">
+        <span>Surface Signal (Visual)</span>
+        <span>Statistical Reality (Risk)</span>
+      </div>
+
+      <div class="iframe-container">
+        <!-- CRITICAL: Make sure 'agriquant_risk_demo.html' is in your repo root -->
+        <iframe src="agriquant_risk_demo.html" title="Agriquant Risk Demo" scrolling="no"></iframe>
+      </div>
+
+      <div class="viz-caption">
+        <strong>The Alpha Gap:</strong> On the left, visual inspection shows vegetation presence (green). On the right, our Z-Score engine reveals a <strong>-2.5 Sigma deviation</strong> (red) in the central productive core. This statistical anomaly signaled the livestock liquidation event 3 weeks before market consensus.
+      </div>
+    </div>
+    <!-- END VISUALIZATION -->
+
     <p>
-      Our mission is to make risk intelligence for agriculture systematic and democratized, and to establish a transparent standard in the industry for data-conscious decision-making.
+      Input prices and currencies move sharply, affecting sowing, feeding, logistics, and hedging decisions. Our mission is to make risk intelligence for agriculture systematic and democratized, establishing a transparent standard for data-conscious decision-making.
     </p>
+
     <div class="footer">
       Follow us on LinkedIn:
       <a href="https://www.linkedin.com/company/agri-quant/" target="_blank" rel="noopener">Agriquant</a>
-      And/or GitHub:
+      &nbsp;&nbsp;•&nbsp;&nbsp;
+      GitHub:
       <a href="https://github.com/Agriquant" target="_blank" rel="noopener">Agriquant</a>
     </div>
   </div>
+
 </body>
 </html>
