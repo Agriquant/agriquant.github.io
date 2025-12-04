@@ -51,11 +51,11 @@
       color: #222;
     }
 
-    /* --- FIGURE CARD DESIGN (Apple/Stripe Research Style) --- */
+    /* --- FIGURE CARD DESIGN --- */
     .figure-card {
       margin: 40px 0;
       border: 1px solid var(--border);
-      border-radius: 6px; /* Precise, tight corners */
+      border-radius: 6px;
       overflow: hidden;
       background: #fff;
     }
@@ -90,7 +90,7 @@
     .iframe-wrapper {
       position: relative;
       width: 100%;
-      padding-bottom: 65%; /* Aspect Ratio */
+      padding-bottom: 65%;
       background: #f9f9f9;
     }
 
@@ -157,18 +157,19 @@
     <!-- RESEARCH FIGURE START -->
     <div class="figure-card">
       <div class="figure-header">
-        <span class="figure-title">Figure 1: Anomaly Detection</span>
-        <span class="figure-tag">NOV 2022 DATASET</span>
+        <span class="figure-title">Figure 1: NDVI Anomaly Detection</span>
+        <span class="figure-tag">NOV 2022 / MODIS vs SENTINEL-2</span>
       </div>
       
       <div class="iframe-wrapper">
-        <!-- Ensure this file exists in your repo root -->
-        <iframe src="agriquant_risk_demo.html" scrolling="no" loading="lazy"></iframe>
+        <!-- Make sure you have uploaded: agriquant_risk_hybrid_v2.html -->
+        <iframe src="agriquant_risk_hybrid_final.html" scrolling="no" loading="lazy"></iframe>
       </div>
 
       <div class="figure-caption">
         <strong>Quantification of Stress.</strong> 
-        Experts familiar with Uruguay’s seasonal NDVI patterns may recognize early stress in the natural-color view (left). However, only the standardized anomaly (right) quantifies the deviation (≈−2.5σ) relative to the historical baseline, revealing the full severity and confirming that optical greenness alone is a lagging indicator during onset drought phases.
+        Experts familiar with Uruguay’s seasonal NDVI patterns may recognize early stress in the natural-color view (Left). However, only the <strong>Standardized Anomaly (Right)</strong> quantifies the deviation (≈−2.5σ) relative to the historical baseline, revealing the full severity and confirming that optical greenness alone is a <strong>lagging indicator</strong> during onset drought phases.
+      </div>
     </div>
     <!-- RESEARCH FIGURE END -->
 
